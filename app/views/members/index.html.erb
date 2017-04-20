@@ -1,0 +1,20 @@
+<h1>Members</h1>
+<table>
+  <tr>
+    <th>name</th>
+    <th>balance (USD)</th>
+  </tr>
+  <% @members.each do |member| %>
+    <tr>
+      <td> <%=member[:name]%> </td>
+      <td> <%=member[:balance]%> </td>
+      <td> <%= link_to("edit member", edit_member_path(member)) %> </td>
+    </tr>
+  <% end %>
+</table>	
+
+<div class="new-links" style="margin-top: 30px;">
+  <%= link_to("NEW MEMBER", action: "new", controller: "members") %> 
+  <%= link_to("NEW TRANSACTION", action: "new", controller: "transactions") %>  
+</div>
+

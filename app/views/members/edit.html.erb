@@ -1,0 +1,13 @@
+<h1>Edit Member Info</h1>
+<%= form_for(@member) do |f| %>
+  name: <%= f.text_field :name %><br />
+  email: <%= f.text_field :email %><br />
+  <%= f.submit %>
+<% end %>
+
+
+<div style="margin-top: 30px;">
+  <%= link_to "Home", members_path %>
+</div>  
+
+	
