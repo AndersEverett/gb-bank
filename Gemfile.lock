@@ -58,9 +58,6 @@ GEM
     capybara-screenshot (1.0.14)
       capybara (>= 1.0, < 3)
       launchy
-    capybara-webkit (1.13.0)
-      capybara (>= 2.3.0, < 2.13.0)
-      json
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     database_cleaner (1.5.3)
@@ -74,6 +71,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    ffaker (2.5.0)
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -217,9 +215,9 @@ DEPENDENCIES
   better_errors
   capybara (~> 2.12, >= 2.12.1)
   capybara-screenshot
-  capybara-webkit
   database_cleaner (~> 1.5, >= 1.5.1)
   factory_girl_rails (~> 4.8)
+  ffaker
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0, >= 3.0.5)

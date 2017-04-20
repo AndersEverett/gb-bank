@@ -20,6 +20,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 
 gem "listen", "~> 3.0", ">= 3.0.5"
 gem "pg", "~> 0.18.4"
+gem "ffaker"
 
 group :development, :test do
   gem "pry-rails"
@@ -34,7 +35,7 @@ end
 
 group :test do
   gem "capybara", "~> 2.12", ">= 2.12.1"
-  gem "capybara-webkit"
+  # gem "capybara-webkit"  #attempted to install this gem for a couple of hours, but, sadly, some combination of the latest Sierra and qt lib blocked installation.
   gem "capybara-screenshot"
   gem "database_cleaner", "~> 1.5", ">= 1.5.1"
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.1"
