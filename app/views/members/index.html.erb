@@ -1,5 +1,5 @@
 <div>
-  <% if user_signed_in? %>	
+  <% if (Rails.env.production? || Rails.env.development?) && user_signed_in? %>	
     <%= button_to 'logout', destroy_user_session_path, method: :delete %>
   <% end %>
 </div>
