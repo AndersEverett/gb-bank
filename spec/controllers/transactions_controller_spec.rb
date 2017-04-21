@@ -8,5 +8,16 @@ RSpec.describe TransactionsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+  describe "GET #new" do
+      it "returns http success" do
+        get :new
+        expect(response).to have_http_status(:success)
+      end
 
+      it "renders the :new view" do
+        member = FactoryGirl.build(:transaction)
+        get :new
+        expect(response).to render_template("new")
+      end
+  end
 end
