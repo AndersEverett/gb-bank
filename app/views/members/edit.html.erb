@@ -1,7 +1,7 @@
 <h1>Edit Member Info</h1>
 <%= form_for(@member) do |f| %>
-  name: <%= f.text_field :name %><br />
-  email: <%= f.text_field :email %><br />
+  name: <%= f.text_field :name, id: 'name' %><br />
+  email: <%= f.text_field :email, id: 'email' %><br />
   <%= f.submit %>
 <% end %>
 

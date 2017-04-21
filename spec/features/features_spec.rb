@@ -26,4 +26,15 @@ feature "New Member Form" do
   end
 end
 
+feature "Edit Member Form" do
+  scenario "should be submittable from the members/[:id]/edit page" do
+    member = Member.create(name: "Jessica", email: "j@cool.com")
+    id = member.id
+        visit "/members/#{id}/edit"
+        fill_in 'name', with: "Queen Jessica"
+        fill_in "email", with: "j@thecoolest.com"
+        click_button 'Update Member'
+        expect(page).to have_content 'Members'
+  end
+end
 
