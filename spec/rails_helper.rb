@@ -32,24 +32,24 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include FeatureHelpers, type: :feature
   config.include ViewHelpers, type: :view
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.before(:each, js: true) do
     # Since we (sometimes) use the same driver for both JS and non-JS tests
     # we need an easy way of distinguishing when JS is actually enabled.
     @javascript_enabled = true
   end
 
-  config.before(:each, type: :feature) do
-    resize_window_default
-  end
+  # config.before(:each, type: :feature) do
+  #   resize_window_default
+  # end
 
-  config.before(:each, :mobile, type: :feature) do
-    resize_window_to_mobile
+  # config.before(:each, :mobile, type: :feature) do
+  #   resize_window_to_mobile
 
-    # rack-test has no concept of a window so need to use :webkit for mobile
-    # responsive tests
-    Capybara.current_driver = :webkit
-  end
+  #   # rack-test has no concept of a window so need to use :webkit for mobile
+  #   # responsive tests
+  #   Capybara.current_driver = :webkit
+  # end
 end
 
 Capybara.configure do |config|
@@ -59,6 +59,6 @@ end
 
 Capybara::Screenshot.autosave_on_failure = false
 
-Capybara::Webkit.configure do |config|
-  config.block_unknown_urls
-end
+# Capybara::Webkit.configure do |config|
+#   config.block_unknown_urls
+# end

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  devise_for :users
+  root to: redirect('/members')
+  get '/members', to: "members#index"
+  
+  resources :members, only: [:index, :edit, :create, :update]
+  resources :transactions, only: [:create]
 
-  # HomeController
-  resources :home, only: :index
+  get 'members/create', to: 'members#new'
+  get 'transactions/create', to: 'transactions#new'
 end

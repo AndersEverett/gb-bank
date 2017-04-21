@@ -1,0 +1,15 @@
+<h1>New Transaction</h1>
+<%= form_for @transaction do |f| %>
+  transaction date <%= select_date Date.today, id: "transaction date", prefix: :transaction_date %><br />
+  amount: <%= f.number_field :amount, id: "amount", step: "0.01" %><br />
+  description: <%= f.text_area :description, id: "description" %><br />
+
+  <%= fields_for :identifier do |i| %>
+    member email: <%= i.text_field :member_email, id: "member email" %><br />
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
+<div style="margin-top: 30px;">
+  <%= link_to "Home", members_path %>
+</div>  

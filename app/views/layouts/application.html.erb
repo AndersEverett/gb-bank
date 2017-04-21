@@ -17,6 +17,7 @@
   <% end %>
 </head>
 <body id="<%= page_specific_css_id %>">
+<%- flash.each do |name, msg| -%><%= content_tag :div, msg, :id => "flash_#{name}" %><%- end -%>
 
 <%= yield %>
 

@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def append_view_paths
     append_view_path "app/views/application"
   end
+
+  def after_sign_out_path_for(resource)
+    return new_user_session_url
+  end
 end
