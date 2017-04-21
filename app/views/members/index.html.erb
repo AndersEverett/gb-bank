@@ -1,3 +1,9 @@
+<div>
+  <% if user_signed_in? %>	
+    <%= button_to 'logout', destroy_user_session_path, method: :delete %>
+  <% end %>
+</div>
+
 <h1>Members</h1>
 <table>
   <tr>
@@ -13,8 +19,7 @@
   <% end %>
 </table>	
 
-<div class="new-links" style="margin-top: 30px;">
+<div style="margin-top: 30px;">
   <%= link_to("NEW MEMBER", action: "new", controller: "members") %> 
   <%= link_to("NEW TRANSACTION", action: "new", controller: "transactions") %>  
 </div>
-
