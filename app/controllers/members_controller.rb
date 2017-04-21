@@ -1,11 +1,10 @@
 class MembersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, unless: "Rails.env.test?" 
   def index
   	@members = Member.all
   end
 
   def edit
-  	Rails.logger.info(params)
   	@member = Member.find(params[:id])
   end
 
@@ -30,7 +29,7 @@ class MembersController < ApplicationController
       Member.update(params["id"], name: params["member"]["name"], email: params["member"]["email"])
       redirect_to(members_path)	
     rescue=>e
-      redirect_to(members_path, flash: { error: "#{e}. Error. Member not updated."})
+      redirect_to(members_path, flash: { error: "#{e}. Error. Member info not updated."})
     end	
   end
 end
